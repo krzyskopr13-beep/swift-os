@@ -1,0 +1,17 @@
+name: Build SwiftOS
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build Image
+        uses: ublue-os/image-builder@main
+        with:
+          recipe: recipe.yml
