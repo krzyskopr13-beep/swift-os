@@ -1,0 +1,16 @@
+name: swift-os
+description: Bezkompromisowy system dla graczy z maksymalna optymalizacja FPS i RAM
+base-image: ghcr.io/ublue-os/arch-dx
+
+stages:
+  - name: install-packages
+    packages:
+      - thorium-browser
+      - gnome-terminal
+      - steam
+      - lutris
+      - heroic-games-launcher-bin
+      - gamemode
+      - gamescope
+      - nvidia-open
+      - mesa
