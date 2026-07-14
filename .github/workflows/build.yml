@@ -18,9 +18,3 @@ jobs:
     steps:
       - name: Build Custom Image
         uses: blue-build/github-action@v1
-        with:
-          recipe: 'recipe.yml'
-          registry_token: ${{ github.token }}
-          pr_event_number: ${{ github.event.number }}
-          # Wyłączamy podpisywanie obrazu, żeby nie szukał kluczy
-          disable_cosign: true
