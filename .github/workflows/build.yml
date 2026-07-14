@@ -18,3 +18,6 @@ jobs:
     steps:
       - name: Build Custom Image
         uses: blue-build/github-action@v1
+        with:
+          # Ta flaga mówi serwerowi: olej klucze i buduj system!
+          cli_args: --no-sign
