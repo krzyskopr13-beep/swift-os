@@ -2,6 +2,9 @@
 name: swift-os
 description: Bezkompromisowy system dla graczy z maksymalna optymalizacja FPS i RAM
 
-# Najpotężniejsza, gotowa baza gamingowa od Universal Blue
 base-image: ghcr.io/ublue-os/kinoite-nvidia
 image-version: latest
+
+# Dajemy mu wymaganą sekcję z bezpiecznym modułem podpisu
+modules:
+  - type: signing
