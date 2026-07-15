@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://blue-build.org
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 name: swift-os
 description: Bezkompromisowy system dla graczy z maksymalna optymalizacja FPS i RAM
 
@@ -9,11 +9,8 @@ image-version: 40
 modules:
   - type: rpm-ostree
     install:
+      - chromium
       - steam
       - gamemode
       - gamescope
-      - akmod-nvidia # Oficjalne sterowniki Nvidia dla Twojego GTX i RTX taty
-
-  - type: default-flatpaks
-    install:
-      - org.chromium.Chromium
+      - akmod-nvidia
