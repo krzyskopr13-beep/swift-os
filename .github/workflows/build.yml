@@ -1,24 +1,24 @@
 name: Build SwiftOS
 on:
-  schedule:
-    - cron: '0 0 * * *'
   push:
     branches:
       - main
   workflow_dispatch:
 
 jobs:
-  bluebuild:
-    name: Build SwiftOS
+  build:
+    name: Build SwiftOS Image
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-      id-token: write
     steps:
-      - name: Build Custom Image
-        uses: blue-build/github-action@v1
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Image with Container Boot
+        uses: docker/build-push-action@v5
         with:
-          recipe: 'recipe.yml'
-          registry_token: ${{ github.token }}
-          pr_event_number: ${{ github.event.number }}
+          context: .
+          file: recipe.yml
+          push: false
