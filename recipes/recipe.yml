@@ -1,21 +1,19 @@
-# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+# yaml-language-server: $schema=https://blue-build.org
 name: swift-os
 description: Bezkompromisowy system dla graczy z maksymalna optymalizacja FPS i RAM
 
-# Wracamy do bazy, tak jak chciał w tym logu
-base-image: ghcr.io/ublue-os/arch-dx
-image-version: latest
+# Bierzemy za baze stabilna, atomowa Fedore z srodowiskiem KDE Plasma
+base-image: ghcr.io/ublue-os/kinoite-main
+image-version: 40
 
-# Zostawiamy nowoczesne moduły
 modules:
   - type: rpm-ostree
     install:
-      - thorium-browser
-      - gnome-terminal
       - steam
-      - lutris
-      - heroic-games-launcher-bin
       - gamemode
       - gamescope
-      - nvidia-open
-      - mesa
+      - akmod-nvidia # Oficjalne sterowniki Nvidia dla Twojego GTX i RTX taty
+
+  - type: default-flatpaks
+    install:
+      - org.chromium.Chromium
