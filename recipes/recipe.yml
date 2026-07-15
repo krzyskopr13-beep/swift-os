@@ -2,11 +2,11 @@
 name: swift-os
 description: Bezkompromisowy system dla graczy z maksymalna optymalizacja FPS i RAM
 
-# Poprawne wskazanie bazy i wersji
-from: ghcr.io/ublue-os/arch-dx
+# Wracamy do bazy, tak jak chciał w tym logu
+base-image: ghcr.io/ublue-os/arch-dx
 image-version: latest
 
-# Nowy, poprawny format instalacji pakietów dla BlueBuild
+# Zostawiamy nowoczesne moduły
 modules:
   - type: rpm-ostree
     install:
