@@ -1,10 +1,10 @@
-# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+# yaml-language-server: $schema=https://blue-build.org
 name: swift-os
 description: Bezkompromisowy system dla graczy z maksymalna optymalizacja FPS i RAM
 
-# Oficjalna i poprawna ścieżka do stabilnego obrazu bazowego Kinoite (Fedora 40)
-base-image: ghcr.io/ublue-os/kinoite-main
-image-version: '40'
+# Używamy oficjalnej bazy z gotowym wsparciem Nvidia i tagiem latest
+base-image: ghcr.io/ublue-os/kinoite-nvidia
+image-version: latest
 
 modules:
   - type: rpm-ostree
@@ -13,4 +13,3 @@ modules:
       - steam
       - gamemode
       - gamescope
-      - akmod-nvidia
