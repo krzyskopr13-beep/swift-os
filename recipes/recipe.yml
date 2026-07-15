@@ -2,14 +2,11 @@
 name: swift-os
 description: Bezkompromisowy system dla graczy z maksymalna optymalizacja FPS i RAM
 
-# Używamy oficjalnej bazy z gotowym wsparciem Nvidia i tagiem latest
+# Sprawdzona baza z gotowym Steamem i Nvidia
 base-image: ghcr.io/ublue-os/kinoite-nvidia
 image-version: latest
 
 modules:
-  - type: rpm-ostree
+  - type: flatpak
     install:
-      - chromium
-      - steam
-      - gamemode
-      - gamescope
+      - org.chromium.Chromium
