@@ -2,9 +2,9 @@
 name: swift-os
 description: Bezkompromisowy system dla graczy z maksymalna optymalizacja FPS i RAM
 
-# Wskazujemy oficjalna, bazowa Fedore Kinoite z najnowszym tagiem
-base-image: ghcr.io/ublue-os/kinoite
-image-version: latest
+# Bierzemy oficjalny, certyfikowany obraz bezpośrednio od Fedory (wydanie stabilne 40)
+base-image: oci.fedoraproject.org/fedora-iot/kinoite
+image-version: 40
 
 modules:
   - type: rpm-ostree
