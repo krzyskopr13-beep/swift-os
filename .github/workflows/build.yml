@@ -23,5 +23,5 @@ jobs:
           cosign_private_key: ${{ secrets.SIGNING_SECRET }}
           registry_token: ${{ github.token }}
           pr_event_number: ${{ github.event.number }}
-          # Wymuszamy podpisanie lokalną parą, żeby serwer nie szukał po omacku
-          signing_secret: ${{ secrets.SIGNING_SECRET }}
+          # Ta linijka nakazuje automatyczne stworzenie instalatora na pendrive
+          generate_iso: true
